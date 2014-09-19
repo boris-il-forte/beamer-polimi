@@ -1,0 +1,273 @@
+% Adaptation of the POLIMI beamer template based on Politecnico di
+% Milano - Department of Electronics and Computer Science - 
+% powerpoint template. Original NTNU beamer template by Håvard Berland - http://www.pvv.ntnu.no/~berland/ntnubeamer/ 
+%
+% author: Luigi Malagò <luigi.malago@gmail.com> 
+% 01-01-2014
+%
+% to change template background images (first slide and remaining
+% slides), you need to change backGround.ps and backGroundFirstPage.ps in gfx folder
+% (starting from a powerpoint/impress template, export single slide as
+% pdf, and then convert to ps)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% Malfil for NTNU-presentasjon i latex-beamer
+%
+% Basert på Powerpointmal laget vår 2005 av NTNU-infoavdelingen.
+%
+%     http://www.math.ntnu.no/~berland/ntnubeamer/
+% 
+% Ikke bruk dette temaet (theme) direkte fra latex-filene, inkluder
+% filene med språk i navnet slik at riktige bakgrunner blir valgt, og
+% de filene vil inkludere denne for deg.
+%
+% Håvard Berland 2005, <Havard.Berland@math.ntnu.no>
+%
+% $Id: beamerthementnu.sty 24 2006-07-05 09:13:02Z berland $
+%
+
+\ProvidesClass{beamerthemepolimi}[2006/07/05]
+
+\mode<presentation>
+
+\RequirePackage{helvet}
+
+\setbeamertemplate{navigation symbols}{}
+
+% ``Reflex blue i RGB, pr. 5. juli 2006''
+\definecolor{polimiblue}{rgb}{0.0549,0.173,0.557}
+
+% Bakgrunnsfarge for bokser hentet fra Fargekart_POLIMI.pdf
+%% MÅ FIKSES NÅR INFOAVDELINGEN BESTEMMER SEG!!
+\definecolor{polimiboksbakgrunn}{rgb}{0.89, 0.93, 0.94}
+
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{example text}{fg=polimiblue!50!black}
+\setbeamercolor{structure}{fg=blue1}
+\setbeamercolor{background canvas}{parent=normal text}
+\setbeamercolor{background}{parent=background canvas}
+
+\setbeamerfont{footline}{size=\tiny}
+\setbeamerfont{normal text}{size=\tiny}
+
+
+\setbeamersize{text margin left=0.5cm,text margin right=0.5cm}
+
+% Bildene deklareres her først, da blir de kun fysisk inkludert en
+% gang i hver pdf-fil som genereres, selv om de brukes på hver side.
+% Andre språkavhengige bilder deklareres i de spesifikke språkfilene.
+\pgfdeclareimage[height=\paperheight,interpolate=true]{bakgrunn}{gfx/backGround}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definerer to templates for bakgrunn, avhengig av om det er forside
+% eller ikke. Hvilken som brukes må styres av brukeren, se kommandoen 
+% \polimititlepage under.
+\defbeamertemplate*{background canvas}{polimi theme}%
+{%
+  \pgfuseimage{bakgrunn}%
+}
+\defbeamertemplate{background canvas}{polimi theme titlepage}%
+{%
+  \pgfuseimage{bakgrunnforside}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% En kommando for å lage forside, som bruker en annen bakgrunn
+\newcommand{\polimititlepage}{%
+{% open a TeX group to keep changes local
+\setbeamertemplate{background canvas}[polimi theme titlepage]
+\setbeamertemplate{footline}[polimi theme titlepage]
+\begin{frame}%
+\titlepage%
+\end{frame}%
+}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+\setbeamertemplate{blocks}[]
+\setbeamercolor{block title}{fg=white,bg=polimiblue}
+\setbeamercolor{block title example}{parent=block title}
+\setbeamercolor{block body}{parent=normal text,%
+  use=block title,bg=polimiboksbakgrunn}
+\setbeamercolor{block body example}{parent=block body}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Footer
+\defbeamertemplate*{footline}{polimi theme}
+{
+  \hbox{%
+    \begin{beamercolorbox}[ht=50mm,dp=2mm,right,rightskip=5.75cm]{footline}%
+      \usebeamerfont{footline}\insertshortauthor,~\insertshorttitle%
+    \end{beamercolorbox}%
+  }
+  \vskip-.11cm
+}
+
+% Footer no logo
+\defbeamertemplate{footline}{polimi theme nologo}
+{
+  \hbox{%
+    \begin{beamercolorbox}[ht=50mm,dp=2mm,right,rightskip=5.75cm]{footline}%
+      \usebeamerfont{footline}\insertshortauthor,~\insertshorttitle%
+    \end{beamercolorbox}%
+  }
+  \vskip-.11cm
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% footer titlepage
+\defbeamertemplate{footline}{polimi theme titlepage}
+{
+  
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page
+\defbeamertemplate*{title page}{polimi}[1][]
+{%
+%  \begin{flushleft}
+
+    \vspace{.25cm}
+
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+
+    \vspace{4.5cm}
+
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+
+    \vskip1em\par
+
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,ht=,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+
+    \vspace{.125cm}
+
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+
+%  \end{flushleft}
+  \vfill
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header Slides
+\defbeamertemplate*{frametitle}{polimi theme}[1][left]
+{
+  \@tempdima=\textwidth%
+%$  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  % \@tempdima must now be the whole physical page width
+  
+  % sep-option to beamercolorbox gives padding in all directions
+  % inside the beamercolorbox.
+  
+  % Page number:
+  \vskip-.02cm
+  \begin{beamercolorbox}[sep=0cm,leftskip=9.45cm,wd=1cm]{pagenumber}
+    \usebeamerfont{pagenumber}
+    \insertframenumber
+  \end{beamercolorbox}
+  
+  % Skip a bit downwards:
+  \vskip-.2cm
+  
+  % Print frametitle:
+  \begin{beamercolorbox}[sep=0cm,left,leftskip=0.22cm,#1]{frametitle}
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+    {\usebeamerfont{frametitle}\insertframetitle\par}%
+    % \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here... 
+  \end{beamercolorbox}%
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Colors and lists
+
+%\definecolor{blue1}{rgb}{1,0,0}
+\definecolor{blue1}{cmyk}{.43,.18,0,.57}
+\definecolor{blue3}{cmyk}{.19,.10,0,.11}
+
+\setbeamercolor*{block title}{bg=blue1,fg=white}
+\setbeamercolor*{block body}{bg=blue3}
+
+\setbeamercolor*{itemize item}{fg=blue1}
+\setbeamercolor*{itemize subitem}{fg=blue1}
+\setbeamercolor*{itemize subsubitem}{fg=blue1}
+\setbeamercolor*{enumerate item}{fg=blue1}
+\setbeamercolor*{enumerate subitem}{fg=blue1}
+\setbeamercolor*{enumerate subsubitem}{fg=blue1}
+
+\setbeamercolor*{pagenumber}{fg=blue1}
+
+\setbeamercolor*{description item}{fg=blue1}
+
+\setbeamercolor*{title}{fg=blue1}
+\setbeamercolor*{institute}{fg=blue1}
+\setbeamercolor*{date}{fg=blue1}
+\setbeamercolor*{author}{fg=blue1}
+\setbeamercolor*{frametitle}{fg=blue1}
+
+\setbeamercolor*{footline}{fg=blue1}
+
+\defbeamertemplate*{itemize item}{polimi}{$\filledsquare$}
+\defbeamertemplate*{itemize subitem}{polimi}{$\bullet$}
+\defbeamertemplate*{itemize subsubitem}{polimi}{$\circ$}
+
+\defbeamertemplate*{enumerate item}{polimi}{}
+\defbeamertemplate*{enumerate subitem}{polimi}{}
+\defbeamertemplate*{enumerate subsubitem}{polimi}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fonts
+
+\setbeamerfont{title}{size=\normalsize,series=\bfseries}
+\setbeamerfont{subtitle}{size=\small}
+\setbeamerfont{author}{size=\footnotesize}
+\setbeamerfont{date}{size=\footnotesize}
+\setbeamerfont{institute}{size=\fontsize{6}{7}}
+\setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamerfont{pagenumber}{size=\footnotesize,series=\bfseries}
+
+\setbeamerfont{itemize item}{size=\footnotesize}
+\setbeamerfont{enumerate item}{size=\footnotesize}
+
+\setbeamerfont{block title}{size=\footnotesize}
+\setbeamerfont{block body}{size=\footnotesize}
+
+\setbeamerfont{page}{size=\footnotesize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOC
+
+\setbeamertemplate{section in toc}[sections numbered]
+
+
+\mode
+<all>

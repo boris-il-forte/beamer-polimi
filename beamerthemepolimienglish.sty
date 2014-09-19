@@ -1,0 +1,42 @@
+% Adaptation of the POLIMI beamer template based on Politecnico di
+% Milano - Department of Electronics and Computer Science - 
+% powerpoint template. Original NTNU beamer template by Håvard Berland - http://www.pvv.ntnu.no/~berland/ntnubeamer/
+%
+% author: Luigi Malagò <luigi.malago@gmail.com> 
+% 01-01-2014
+%
+% to change template background images (first slide and remaining
+% slides), you need to change backGround.ps and backGroundFirstPage.ps in gfx folder
+% (starting from a powerpoint/impress template, export single slide as
+% pdf, and then convert to ps)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Malfil for en engelsk NTNU-presentasjon i latex-beamer.
+%
+%     http://www.pvv.ntnu.no/~berland/ntnubeamer/
+% 
+% Gjør kun det som er språkavhengig, resten hentes fra
+% beamerthementnu.sty
+%
+% Håvard Berland 2005, <Havard.Berland@math.ntnu.no>
+%
+% $Id: beamerthementnuenglish.sty 26 2008-01-13 20:10:27Z berland $
+%
+
+\mode<presentation>
+
+% Bildene deklareres bare her, da blir de kun fysisk inkludert en
+% gang i hver pdf-fil som genereres, selv om de brukes på hver side.
+
+% Logo nede til høyre på hver side:
+\pgfdeclareimage[height=7mm,interpolate=true]{skapendeunivlite}{gfx/english-logo}
+
+% Bakgrunnsbilde for forsida:
+\pgfdeclareimage[height=\paperheight,interpolate=true]{bakgrunnforside}{gfx/backGroundFirstPage}
+
+\usetheme{polimi}
+
+\mode
+<all>
+
