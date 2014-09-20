@@ -4,13 +4,31 @@
 \usepackage{epstopdf}
 
 % Background
-\defbeamertemplate*{background canvas}{polimi theme}%
+\defbeamertemplate*{backgroundsimple}{polimi theme}%
 {
  \includegraphics[height=\paperheight]{gfx/backGround}
 }
-\defbeamertemplate{background canvas}{polimi theme titlepage}%
+\defbeamertemplate{backgroundsimple}{polimi theme titlepage}%
 {
-  \includegraphics[height=\paperheight]{gfx/backGroundFirstPage}
+  \includegraphics[height=\paperheight]{gfx/backGroundFirstPageSimple}
+}
+
+\defbeamertemplate*{backgroundpolimi}{polimi theme}%
+{
+ \includegraphics[height=\paperheight]{gfx/backGround}
+}
+\defbeamertemplate{backgroundpolimi}{polimi theme titlepage}%
+{
+  \includegraphics[height=\paperheight]{gfx/backGroundFirstPagePolimi}
+}
+
+\defbeamertemplate*{backgroundairlab}{polimi theme}%
+{
+ \includegraphics[height=\paperheight]{gfx/backGround}
+}
+\defbeamertemplate{backgroundairlab}{polimi theme titlepage}%
+{
+  \includegraphics[height=\paperheight]{gfx/backGroundFirstPageAirlab}
 }
 
 % Title page

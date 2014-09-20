@@ -15,14 +15,27 @@
 \newcommand\supervisor[2]{\def\insertsupervisor{#1: #2}}
 
 % Title page command
-\newcommand{\polimititlepage}{%
-{% open a TeX group to keep changes local
-\setbeamertemplate{background canvas}[polimi theme titlepage]
-\setbeamertemplate{footline}[polimi theme titlepage]
-\begin{frame}%
-\titlepage%
-\end{frame}%
-}%
+% Title page command
+\newcommand{\polimititlepage[1]}{
+ \ifthenelse{\equal{#1}{polimi}} % logo polimi
+ {\setbeamertemplate{backgroundpolimi}[polimi theme titlepage]
+ \setbeamertemplate{footline}[polimi theme titlepage]
+ \begin{frame}
+ \titlepage
+ \end{frame}}
+ {\ifthenelse{\equal{#1}{airlab}} % logo airlab
+ {\setbeamertemplate{backgroundairlab}[polimi theme titlepage]
+ \setbeamertemplate{footline}[polimi theme titlepage]
+ \begin{frame}
+ \titlepage
+ \end{frame}}
+ { % else no logo
+ {\setbeamertemplate{backgroundsimple}[polimi theme titlepage]
+ \setbeamertemplate{footline}[polimi theme titlepage]
+ \begin{frame}
+ \titlepage
+ \end{frame}}}
+ }
 }
 
 \mode<all>
