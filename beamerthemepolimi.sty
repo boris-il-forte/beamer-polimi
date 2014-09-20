@@ -12,4 +12,15 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{blocks}[rounded][shadow=true]  
 
+% Title page command
+\newcommand{\polimititlepage}{%
+{% open a TeX group to keep changes local
+\setbeamertemplate{background canvas}[polimi theme titlepage]
+%\setbeamertemplate{footline}[polimi theme titlepage]
+\begin{frame}%
+\titlepage%
+\end{frame}%
+}%
+}
+
 \mode<all>

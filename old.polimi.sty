@@ -103,43 +103,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Title page
-\defbeamertemplate*{title page}{polimi}[1][]
-{%
-%  \begin{flushleft}
 
-    \vspace{.25cm}
-
-    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm#1]{institute}
-      \usebeamerfont{institute}\insertinstitute
-    \end{beamercolorbox}
-
-    \vspace{4.5cm}
-
-    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,#1]{title}
-      \usebeamerfont{title}\inserttitle\par%
-      \ifx\insertsubtitle\@empty%
-      \else%
-        \vskip0.25em%
-        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-      \fi%     
-    \end{beamercolorbox}%
-
-    \vskip1em\par
-
-    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,ht=,#1]{author}
-      \usebeamerfont{author}\insertauthor
-    \end{beamercolorbox}
-
-    \vspace{.125cm}
-
-    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,#1]{date}
-      \usebeamerfont{date}\insertdate
-    \end{beamercolorbox}
-
-%  \end{flushleft}
-  \vfill
-}
 
 
 
