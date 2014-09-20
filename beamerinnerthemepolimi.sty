@@ -1,17 +1,16 @@
 \mode<presentation>
 
-% Images
-\pgfdeclareimage[height=\paperheight,interpolate=true]{titlepagebackground}{gfx/backGroundFirstPage}
-\pgfdeclareimage[height=\paperheight,interpolate=true]{slidesbackground}{gfx/backGround}
+\usepackage{graphicx}
+\usepackage{epstopdf}
 
 % Background
 \defbeamertemplate*{background canvas}{polimi theme}%
 {
-  \pgfuseimage{slidesbackground}%
+ \includegraphics[height=\paperheight]{gfx/backGround}
 }
 \defbeamertemplate{background canvas}{polimi theme titlepage}%
 {
-  \pgfuseimage{titlepagebackground}%
+  \includegraphics[height=\paperheight]{gfx/backGroundFirstPage}
 }
 
 % Title page
