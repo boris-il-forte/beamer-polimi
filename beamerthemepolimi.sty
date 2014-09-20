@@ -16,26 +16,36 @@
 
 % Title page command
 % Title page command
-\newcommand{\polimititlepage[1]}{
+\newcommand{\polimititlepage[1]}
+{
+
+{
  \ifthenelse{\equal{#1}{polimi}} % logo polimi
- {\setbeamertemplate{background canvas}[polimi theme titlepagepolimi]
- \setbeamertemplate{footline}[polimi theme titlepagepolimi]
- \begin{frame}
- \titlepage
- \end{frame}}
- {\ifthenelse{\equal{#1}{airlab}} % logo airlab
- {\setbeamertemplate{background canvas}[polimi theme titlepageairlab]
- \setbeamertemplate{footline}[polimi theme titlepageairlab]
- \begin{frame}
- \titlepage
- \end{frame}}
- { % else no logo
- {\setbeamertemplate{background canvas}[polimi theme titlepagesimple]
- \setbeamertemplate{footline}[polimi theme titlepagesimple]
- \begin{frame}
- \titlepage
- \end{frame}}}
+ {
+ \setbeamertemplate{background canvas}[polimi theme titlepagepolimi]
  }
+ {
+ \ifthenelse{\equal{#1}{airlab}} % logo airlab
+ {
+ \setbeamertemplate{background canvas}[polimi theme titlepageairlab]
+
+ }
+ { % else no logo
+ \setbeamertemplate{background canvas}[polimi theme titlepagesimple]
+ }
+ }
+ 
+ \setbeamertemplate{footline}[polimi theme titlepage]
+ 
+ \begin{frame}
+  \titlepage
+ \end{frame}
+
+ 
+}
+
+
+ 
 }
 
 \mode<all>
