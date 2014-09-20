@@ -20,8 +20,9 @@
 \title[Short title]{Long title}
 \subtitle{subtitle}
 
-\author[author]{author}
-\supervisor{Supervisor}{supervisor name}
+\author[author]{\textbf{author}\\
+Relatore: \textbf{supervisor}}
+
 \date[31/04/1995]{31 Febbraio 1955}
 
 \begin{document}

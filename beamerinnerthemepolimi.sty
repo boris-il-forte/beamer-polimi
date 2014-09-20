@@ -38,8 +38,13 @@
     \vskip1em\par
 
     \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,ht=,#1]{author}
-      \usebeamerfont{author}\insertauthor
+      \usebeamerfont{author}\textbf{\insertauthor}
     \end{beamercolorbox}
+    
+    \ifx\insertsupervisor\relax\relax\else
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,ht=,#1]{author}
+        \usebeamerfont{author}\supervisortitle:~\insertsupervisor
+    \end{beamercolorbox}\fi
 
     \vspace{.125cm}
 

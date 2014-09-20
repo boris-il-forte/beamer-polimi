@@ -10,13 +10,18 @@
 \usecolortheme{polimi}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{blocks}[rounded][shadow=true]  
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+%supervisor command
+\let\insertsupervisor\relax
+\newcommand\supervisortitle[2]{\def\insertsupervisortitle{#1, #2}}
+\newcommand\supervisor[2]{\def\insertsupervisor{#1: #2}}
 
 % Title page command
 \newcommand{\polimititlepage}{%
 {% open a TeX group to keep changes local
 \setbeamertemplate{background canvas}[polimi theme titlepage]
-%\setbeamertemplate{footline}[polimi theme titlepage]
+\setbeamertemplate{footline}[polimi theme titlepage]
 \begin{frame}%
 \titlepage%
 \end{frame}%

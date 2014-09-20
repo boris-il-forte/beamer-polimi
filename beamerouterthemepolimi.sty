@@ -1,0 +1,42 @@
+\mode<presentation>
+
+% Footer
+\defbeamertemplate*{footline}{polimi theme}
+{
+   \hbox{
+    \begin{beamercolorbox}[dp=2mm,right,rightskip=5.75cm]{footline}%
+       \usebeamerfont{footline}\insertshortauthor,~\insertshorttitle%
+    \end{beamercolorbox}%
+   }
+   \vskip-.11cm
+}
+\defbeamertemplate{footline}{polimi theme titlepage}
+{
+  
+}
+
+% Header Slides
+\defbeamertemplate*{frametitle}{polimi theme}[1][left]
+{
+  \@tempdima=\textwidth
+  \advance\@tempdima by\beamer@rightmargin
+  
+  % Page number:
+  \vskip-.02cm
+  \begin{beamercolorbox}[sep=0cm,leftskip=9.45cm,wd=1cm]{pagenumber}
+    \usebeamerfont{pagenumber}
+    \insertframenumber
+  \end{beamercolorbox}
+  
+  % Skip a bit downwards:
+  \vskip-.2cm
+  
+  % Print frametitle:
+  \begin{beamercolorbox}[sep=0cm,left,leftskip=0.22cm,#1]{frametitle}
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi
+    {\usebeamerfont{frametitle}\insertframetitle\par}
+  \end{beamercolorbox}
+}
+
+
+\mode<all>
