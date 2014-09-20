@@ -18,20 +18,20 @@
 % Title page command
 \newcommand{\polimititlepage[1]}{
  \ifthenelse{\equal{#1}{polimi}} % logo polimi
- {\setbeamertemplate{backgroundpolimi}[polimi theme titlepage]
- \setbeamertemplate{footline}[polimi theme titlepage]
+ {\setbeamertemplate{background canvas}[polimi theme titlepagepolimi]
+ \setbeamertemplate{footline}[polimi theme titlepagepolimi]
  \begin{frame}
  \titlepage
  \end{frame}}
  {\ifthenelse{\equal{#1}{airlab}} % logo airlab
- {\setbeamertemplate{backgroundairlab}[polimi theme titlepage]
- \setbeamertemplate{footline}[polimi theme titlepage]
+ {\setbeamertemplate{background canvas}[polimi theme titlepageairlab]
+ \setbeamertemplate{footline}[polimi theme titlepageairlab]
  \begin{frame}
  \titlepage
  \end{frame}}
  { % else no logo
- {\setbeamertemplate{backgroundsimple}[polimi theme titlepage]
- \setbeamertemplate{footline}[polimi theme titlepage]
+ {\setbeamertemplate{background canvas}[polimi theme titlepagesimple]
+ \setbeamertemplate{footline}[polimi theme titlepagesimple]
  \begin{frame}
  \titlepage
  \end{frame}}}
