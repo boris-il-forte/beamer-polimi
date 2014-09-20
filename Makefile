@@ -6,7 +6,7 @@ package_name = polimi-beamer
 
 style_files = $(wildcard *.sty)
 image_dir = gfx
-all: install
+all: directory copy
 
 install: directory copy hash
 
@@ -26,3 +26,16 @@ copyimg: $(image_dir)
 hash:
 	@echo "rebuilding texlive hash"
 	@texhash
+	
+deb_name = --pkgname beamer-polimi
+deb_version = --pkgversion 1.0.0
+deb_architecture = -A all
+deb_license = --pkglicense GPL
+deb_mantainer = --maintainer "Davide Tateo"
+deb_provides = --provides beamer-polimi
+#deb_requires 
+
+deb_config = $(deb_name) $(deb_version) $(deb_architecture) $(deb_license) $(deb_mantainer) $(deb_provides)
+
+deb: 
+	@checkinstall -D --fstrans=no --install=no --nodoc -y $(deb_config)
