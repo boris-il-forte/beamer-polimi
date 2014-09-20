@@ -1,0 +1,50 @@
+\mode<presentation>
+
+% Color definition
+\definecolor{polimiblue}{rgb}{0.0549,0.173,0.557}
+\definecolor{blue1}{cmyk}{.43,.18,0,.57}
+\definecolor{blue2}{cmyk}{.19,.10,0,.11}
+\definecolor{polimibackground}{rgb}{0.89, 0.93, 0.94}
+
+
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{example text}{fg=polimiblue!50!black}
+\setbeamercolor{structure}{fg=blue1}
+\setbeamercolor{background canvas}{parent=normal text}
+\setbeamercolor{background}{parent=background canvas}
+
+
+
+\setbeamercolor*{block title}{bg=blue1,fg=white}
+\setbeamercolor*{block body}{bg=blue2}
+
+\setbeamercolor*{itemize item}{fg=blue1}
+\setbeamercolor*{itemize subitem}{fg=blue1}
+\setbeamercolor*{itemize subsubitem}{fg=blue1}
+\setbeamercolor*{enumerate item}{fg=blue1}
+\setbeamercolor*{enumerate subitem}{fg=blue1}
+\setbeamercolor*{enumerate subsubitem}{fg=blue1}
+
+\setbeamercolor*{pagenumber}{fg=blue1}
+
+\setbeamercolor*{description item}{fg=blue1}
+
+\setbeamercolor*{title}{fg=blue1}
+\setbeamercolor*{institute}{fg=blue1}
+\setbeamercolor*{date}{fg=blue1}
+\setbeamercolor*{author}{fg=blue1}
+\setbeamercolor*{frametitle}{fg=blue1}
+
+\setbeamercolor*{footline}{fg=blue1}
+
+
+% Blocks
+\setbeamercolor{block title}{fg=white,bg=polimiblue}
+\setbeamercolor{block title example}{parent=block title}
+\setbeamercolor{block body}{parent=normal text,%
+  use=block title,bg=polimibackground}
+\setbeamercolor{block body example}{parent=block body}
+
+\mode
+<all>

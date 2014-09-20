@@ -1,0 +1,177 @@
+% Adaptation of the POLIMI beamer template based on Politecnico di
+% Milano - Department of Electronics and Computer Science - 
+% powerpoint template. Original NTNU beamer template by Håvard Berland - http://www.pvv.ntnu.no/~berland/ntnubeamer/ 
+%
+% author: Luigi Malagò <luigi.malago@gmail.com> 
+% 01-01-2014
+%
+% to change template background images (first slide and remaining
+% slides), you need to change backGround.ps and backGroundFirstPage.ps in gfx folder
+% (starting from a powerpoint/impress template, export single slide as
+% pdf, and then convert to ps)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% Malfil for NTNU-presentasjon i latex-beamer
+%
+% Basert på Powerpointmal laget vår 2005 av NTNU-infoavdelingen.
+%
+%     http://www.math.ntnu.no/~berland/ntnubeamer/
+% 
+% Ikke bruk dette temaet (theme) direkte fra latex-filene, inkluder
+% filene med språk i navnet slik at riktige bakgrunner blir valgt, og
+% de filene vil inkludere denne for deg.
+%
+% Håvard Berland 2005, <Havard.Berland@math.ntnu.no>
+%
+% $Id: beamerthementnu.sty 24 2006-07-05 09:13:02Z berland $
+%
+
+\ProvidesClass{beamerthemepolimi}[2006/07/05]
+
+\mode<presentation>
+
+\RequirePackage{helvet}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+\setbeamersize{text margin left=0.5cm,text margin right=0.5cm}
+
+% Bildene deklareres her først, da blir de kun fysisk inkludert en
+% gang i hver pdf-fil som genereres, selv om de brukes på hver side.
+% Andre språkavhengige bilder deklareres i de spesifikke språkfilene.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definerer to templates for bakgrunn, avhengig av om det er forside
+% eller ikke. Hvilken som brukes må styres av brukeren, se kommandoen 
+% \polimititlepage under.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% En kommando for å lage forside, som bruker en annen bakgrunn
+\newcommand{\polimititlepage}{%
+{% open a TeX group to keep changes local
+\setbeamertemplate{background canvas}[polimi theme titlepage]
+\setbeamertemplate{footline}[polimi theme titlepage]
+\begin{frame}%
+\titlepage%
+\end{frame}%
+}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Footer
+\defbeamertemplate*{footline}{polimi theme}
+{
+  \hbox{%
+    \begin{beamercolorbox}[ht=50mm,dp=2mm,right,rightskip=5.75cm]{footline}%
+      \usebeamerfont{footline}\insertshortauthor,~\insertshorttitle%
+    \end{beamercolorbox}%
+  }
+  \vskip-.11cm
+}
+
+% Footer no logo
+\defbeamertemplate{footline}{polimi theme nologo}
+{
+  \hbox{%
+    \begin{beamercolorbox}[ht=50mm,dp=2mm,right,rightskip=5.75cm]{footline}%
+      \usebeamerfont{footline}\insertshortauthor,~\insertshorttitle%
+    \end{beamercolorbox}%
+  }
+  \vskip-.11cm
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% footer titlepage
+\defbeamertemplate{footline}{polimi theme titlepage}
+{
+  
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page
+\defbeamertemplate*{title page}{polimi}[1][]
+{%
+%  \begin{flushleft}
+
+    \vspace{.25cm}
+
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+
+    \vspace{4.5cm}
+
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+
+    \vskip1em\par
+
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,ht=,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+
+    \vspace{.125cm}
+
+    \begin{beamercolorbox}[sep=3pt,left,leftskip=3.6cm,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+
+%  \end{flushleft}
+  \vfill
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header Slides
+\defbeamertemplate*{frametitle}{polimi theme}[1][left]
+{
+  \@tempdima=\textwidth%
+%$  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  % \@tempdima must now be the whole physical page width
+  
+  % sep-option to beamercolorbox gives padding in all directions
+  % inside the beamercolorbox.
+  
+  % Page number:
+  \vskip-.02cm
+  \begin{beamercolorbox}[sep=0cm,leftskip=9.45cm,wd=1cm]{pagenumber}
+    \usebeamerfont{pagenumber}
+    \insertframenumber
+  \end{beamercolorbox}
+  
+  % Skip a bit downwards:
+  \vskip-.2cm
+  
+  % Print frametitle:
+  \begin{beamercolorbox}[sep=0cm,left,leftskip=0.22cm,#1]{frametitle}
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+    {\usebeamerfont{frametitle}\insertframetitle\par}%
+    % \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here... 
+  \end{beamercolorbox}%
+}
+
+\mode
+<all>

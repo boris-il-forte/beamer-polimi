@@ -1,0 +1,31 @@
+\mode<presentation>
+
+% Images
+\pgfdeclareimage[height=\paperheight,interpolate=true]{titlepagebackground}{gfx/backGroundFirstPage}
+\pgfdeclareimage[height=\paperheight,interpolate=true]{slidesbackground}{gfx/backGround}
+
+% Background
+\defbeamertemplate*{background canvas}{polimi theme}%
+{
+  \pgfuseimage{slidesbackground}%
+}
+\defbeamertemplate{background canvas}{polimi theme titlepage}%
+{
+  \pgfuseimage{titlepagebackground}%
+}
+
+
+% Table of contents
+\setbeamertemplate{section in toc}[sections numbered]
+
+% Lists
+\defbeamertemplate*{itemize item}{polimi}{$\filledsquare$}
+\defbeamertemplate*{itemize subitem}{polimi}{$\bullet$}
+\defbeamertemplate*{itemize subsubitem}{polimi}{$\circ$}
+
+\defbeamertemplate*{enumerate item}{polimi}{}
+\defbeamertemplate*{enumerate subitem}{polimi}{}
+\defbeamertemplate*{enumerate subsubitem}{polimi}{}
+
+\mode
+<all>
