@@ -4,7 +4,6 @@
 % 19-09-2014
 %
 
-
 \documentclass[c]{beamer}
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
@@ -35,50 +34,98 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{A}
+\section{Section A}
+
 \begin{frame}
-\frametitle{a1}
+\frametitle{Title A1}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id ex ornare, gravida nisi in, ornare risus. Aenean eu posuere purus. Curabitur molestie consequat eleifend. Ut imperdiet at risus quis suscipit. Suspendisse ligula ligula, euismod in vestibulum non, lobortis a dolor. Mauris varius risus eu tristique pretium. Nullam placerat, ligula id mollis sagittis, diam leo interdum sapien, nec molestie enim leo et felis. Etiam maximus convallis libero, ac venenatis nunc sagittis nec. Proin nunc justo, iaculis eu dui ut, suscipit fermentum nisl. Donec bibendum tellus in diam posuere finibus. Donec sed luctus leo. Nulla eget interdum dolor. Suspendisse orci ex, pharetra vitae aliquam ac, rutrum in dui.
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{B}
+\section{Section B}
+
 \begin{frame}
-\frametitle{B1}
+\frametitle{Title B1}
 
+\begin{itemize}
+\addtolength{\itemsep}{.2cm}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+\item Nulla id ex ornare, gravida nisi in, ornare risus.
+  \begin{itemize}
+    \addtolength{\itemsep}{.1cm}
+  \item[1.] Aenean eu posuere purus.
+  \item[2.] Etiam maximus convallis libero, ac venenatis nunc sagittis nec.
+  \end{itemize}
+\item Suspendisse orci ex, pharetra vitae aliquam ac, rutrum in dui.
+\end{itemize}
 
-\begin{columns}[c]
-\column{0.5\textwidth}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id ex ornare, gravida nisi in, ornare risus. Aenean eu posuere purus. Curabitur molestie consequat eleifend. Ut imperdiet at risus quis suscipit. Suspendisse ligula ligula, euismod in vestibulum non, lobortis a dolor. 
-\column{0.5\textwidth}
+\end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Title B2}
+
+\begin{theorem}[Th. Name]
+\label{thlabel} This is a theorem
+\begin{itemize}
+\item Property 1;
+\item Property 2.
+\end{itemize}
+\end{theorem}
+
+\pause
+
+\textit{Proof. }
+\begin{align}
+    a + b & = c \\
+    a & = c - b \\
+    answer & = 42
+\end{align}
+\qed
+
+\pause
+
+\begin{proof}
+Another proof style.
+\end{proof}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section C}
+
+\begin{frame}
+\frametitle{Title C1}
+
+\begin{columns}[t]
+\column{.33\textwidth}
+First column.\\
+\onslide<3>{\bigskip Appears with third column}
+\pause{}
+\column{.33\textwidth}
+Second column.
+\pause
+\column{.33\textwidth}
+Third column.
 \end{columns}
 
 \end{frame}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{C}
 
 \begin{frame}
-
-\frametitle{C1}
-
-\begin{itemize}
- \item Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id ex ornare, gravida nisi in, ornare risus. 
- \item Aenean eu posuere purus. Curabitur molestie consequat eleifend. 
- \item Ut imperdiet at risus quis suscipit. Suspendisse ligula ligula, euismod in vestibulum non, lobortis a dolor.
- \item Mauris varius risus eu tristique pretium.
- \item Nullam placerat, ligula id mollis sagittis, diam leo interdum sapien, nec molestie enim leo et felis.
-\end{itemize}
+\frametitle{Title C2}
 
 
-
+\centering
+Image:\\
+\bigskip\bigskip
+\includegraphics[height=2cm]{gfx/polimi-logo}
 
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
