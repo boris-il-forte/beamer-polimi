@@ -1,6 +1,7 @@
 \mode<presentation>
 
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{epstopdf}
 \usepackage{MnSymbol}
 
@@ -12,15 +13,27 @@
 
 \defbeamertemplate{background canvas}{polimi theme titlepagesimple}%
 {
-  \includegraphics[height=\paperheight]{gfx/backGroundFirstPageSimple}
+\includegraphics[height=\paperheight]{gfx/backGroundFirstPage}
+ 
 }
+
 \defbeamertemplate{background canvas}{polimi theme titlepagepolimi}%
 {
-  \includegraphics[height=\paperheight]{gfx/backGroundFirstPagePolimi}
+  \begin{tikzpicture}
+   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \node[inner sep=0pt] (background) at (\the\paperwidth/2, \the\paperheight/2){\includegraphics[height=\paperheight]{gfx/backGroundFirstPage}};
+   \node[inner sep=0pt] (logo) at (0.9*\the\paperwidth,0.88*\the\paperheight)
+     {\includegraphics[width=.20\textwidth]{gfx/logo-polimi}};
+  \end{tikzpicture}
 }
 \defbeamertemplate{background canvas}{polimi theme titlepageairlab}%
 {
-  \includegraphics[height=\paperheight]{gfx/backGroundFirstPageAirlab}
+   \begin{tikzpicture}
+   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \node[inner sep=0pt] (background) at (\the\paperwidth/2, \the\paperheight/2){\includegraphics[height=\paperheight]{gfx/backGroundFirstPage}};
+   \node[inner sep=0pt] (logo) at (0.13*\the\paperwidth,0.4*\the\paperheight)
+     {\includegraphics[width=.25\textwidth]{gfx/logo-airlab}};
+  \end{tikzpicture}
 }
 
 % Title page
