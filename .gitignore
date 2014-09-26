@@ -110,3 +110,4 @@ sympy-plots-for-*.tex/
 
 # backup
 *.backup
+backup-*.tgz

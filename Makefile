@@ -29,13 +29,14 @@ hash:
 	
 deb_name = --pkgname beamer-polimi
 deb_version = --pkgversion 1.0.0
+deb_relase = --pkgrelease 2
 deb_architecture = -A all
 deb_license = --pkglicense GPL
 deb_mantainer = --maintainer "Davide Tateo"
 deb_provides = --provides beamer-polimi
 #deb_requires 
 
-deb_config = $(deb_name) $(deb_version) $(deb_architecture) $(deb_license) $(deb_mantainer) $(deb_provides)
+deb_config = $(deb_name) $(deb_version) $(deb_relase) $(deb_architecture) $(deb_license) $(deb_mantainer) $(deb_provides)
 
 deb: 
 	@checkinstall -D --fstrans=no --install=no --nodoc -y $(deb_config)
