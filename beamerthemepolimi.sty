@@ -27,14 +27,19 @@
  \setbeamertemplate{background canvas}[polimi theme titlepagepolimi]
  }
  {
- \ifthenelse{\equal{#1}{airlab}} % logo airlab
- {
- \setbeamertemplate{background canvas}[polimi theme titlepageairlab]
-
- }
- { % else no logo
- \setbeamertemplate{background canvas}[polimi theme titlepagesimple]
- }
+    \ifthenelse{\equal{#1}{airlab}} % logo airlab
+    {
+    \setbeamertemplate{background canvas}[polimi theme titlepageairlab]
+    }
+    {
+        \ifthenelse{\equal{#1}{necst}}
+        {
+         \setbeamertemplate{background canvas}[polimi theme titlepagenecst]
+         }
+         {%else no logo
+         \setbeamertemplate{background canvas}[polimi theme titlepagesimple]
+         }
+     }
  }
  
  \setbeamertemplate{footline}[polimi theme titlepage]

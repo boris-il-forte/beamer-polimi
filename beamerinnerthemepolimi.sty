@@ -35,6 +35,16 @@
      {\includegraphics[width=.25\textwidth]{gfx/logo-airlab}};
   \end{tikzpicture}
 }
+\defbeamertemplate{background canvas}{polimi theme titlepagenecst}%
+{
+   \begin{tikzpicture}
+   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \node[inner sep=0pt] (background) at (\the\paperwidth/2, \the\paperheight/2){\includegraphics[height=\paperheight]{gfx/backGroundFirstPage}};
+   \node[inner sep=0pt] (logo) at (0.16*\the\paperwidth,0.17*\the\paperheight)
+     {\includegraphics[width=.25\textwidth]{gfx/logo-necst}};
+  \end{tikzpicture}
+}
+
 
 % Title page
 \defbeamertemplate*{title page}{polimi}[1][]
