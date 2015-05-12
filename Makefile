@@ -29,7 +29,7 @@ hash:
 	
 deb_name = --pkgname beamer-polimi
 deb_version = --pkgversion 1.0.0
-deb_relase = --pkgrelease 3
+deb_relase = --pkgrelease 4
 deb_architecture = -A all
 deb_license = --pkglicense GPL
 deb_mantainer = --maintainer "Davide Tateo"
